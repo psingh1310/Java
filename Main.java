@@ -3,28 +3,14 @@ package com.prashant;
 public class Main {
 
     public static void main(String[] args) {
-        //passing value to the constructor
-      BankAccount prashantAccount = new BankAccount();/*("BKID123456",
-      8000, "kumar", "singh@com",839010); */
+	vipCustomer customer_one = new vipCustomer();
+        System.out.println(customer_one.getCustomerName());
 
-        System.out.println(prashantAccount.getBalance());
-        System.out.println(prashantAccount.getAccountnumber());
+    vipCustomer customer_two = new vipCustomer("Bob",10000.00);
+        System.out.println(customer_two.getCustomerName());
 
-   /*  prashantAccount.setAccountnumber("BKID154789246"); */
-     /*System.out.println("Account number is " + bank.getAccountnumber()); */
-    /*    prashantAccount.setBalance(0.00);
-        prashantAccount.setCustomerName("kumar");
-        prashantAccount.setEmail("psingh1310@gmail.com");
-        prashantAccount.setPhoneNumber(839010); */
-
-      prashantAccount.withdrewAmount(100);
-      prashantAccount.depositFunds(800);
-      prashantAccount.withdrewAmount(100);
-      prashantAccount.depositFunds(200);
-
-      BankAccount kumarAccount = new BankAccount("Kumar",
-              "kumar@123",12345);
-        System.out.println(kumarAccount.getAccountnumber() + " Name " +
-                kumarAccount.getCustomerName());
+    vipCustomer customer_three = new vipCustomer("Tim",70000.00,
+            "tim@fab");
+        System.out.println(customer_three.getCustomerName());
     }
 }
