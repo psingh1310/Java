@@ -1,16 +1,30 @@
 package com.prashant;
 
 public class Main {
-
     public static void main(String[] args) {
-	vipCustomer customer_one = new vipCustomer();
-        System.out.println(customer_one.getCustomerName());
+        VolkswagenPolo polo = new VolkswagenPolo(36);
+      //  polo.steer(45);
+       // polo.accelerate(30);
+       // polo.accelerate(60);
 
-    vipCustomer customer_two = new vipCustomer("Bob",10000.00);
-        System.out.println(customer_two.getCustomerName());
+        Dimensions dimensions = new Dimensions(20,20,5);
+        Case theCase = new Case("220B","HP","240",dimensions);
 
-    vipCustomer customer_three = new vipCustomer("Tim",70000.00,
-            "tim@fab");
-        System.out.println(customer_three.getCustomerName());
+
+       // Monitor theMonitor = new Monitor("HP1247B","HP",15,nativeResolution);
+        Monitor theMonitor = new Monitor("HP1247B","HP",15,new Resolution(2540,144));
+                          //it created the instance of the class without using the variable
+
+        MotherBoard theMotherBoard = new MotherBoard("BJ-200","ASUS",
+                4, 6,"V2.44");
+
+        PC thePC = new PC(theCase,theMonitor,theMotherBoard); //we created the PC class by passing
+           //the three objects
+
+        //how we access the methods in monitor class
+        //pc object --> monitor getter --> method name
+        thePC.getMonitor().drawpixelAt(1500,1200,"red");
+        thePC.getMotherBoard().loadProgram("Windows 1.0");
+        thePC.getTheCase().pressPowerButton();
     }
 }
