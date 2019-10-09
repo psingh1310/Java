@@ -1,30 +1,43 @@
-package com.prashant;
+package com.company;
 
 public class Main {
+
     public static void main(String[] args) {
-        VolkswagenPolo polo = new VolkswagenPolo(36);
-      //  polo.steer(45);
-       // polo.accelerate(30);
-       // polo.accelerate(60);
+        System.out.println("Creating a blank array of size 10...");
+        SingleDimensionalArray sda = new SingleDimensionalArray(10);
+        System.out.println("Printing the array");
+        sda.traverseArray();
+        System.out.println();
+        System.out.println();
 
-        Dimensions dimensions = new Dimensions(20,20,5);
-        Case theCase = new Case("220B","HP","240",dimensions);
+        System.out.println("Inserting values into the array");
+        sda.insert(0,0);
+        sda.insert(1,10);
+        sda.insert(2,20);
+        sda.insert(3,30);
+        sda.insert(4,40);
+        sda.insert(5,50);
+        sda.insert(6,60);
+        sda.insert(7,70);
+        sda.insert(8,80);
+        sda.insert(9,90);
+        sda.insert(1,100);
+        sda.insert(11,110);
 
+        System.out.println("Accessing the cell number .... ");
+        sda.accessingCell(8);
+        System.out.println();
 
-       // Monitor theMonitor = new Monitor("HP1247B","HP",15,nativeResolution);
-        Monitor theMonitor = new Monitor("HP1247B","HP",15,new Resolution(2540,144));
-                          //it created the instance of the class without using the variable
+        System.out.println("Searching element in the array....");
+        sda.searchAnArray(40);
+        System.out.println();
+        System.out.println();
 
-        MotherBoard theMotherBoard = new MotherBoard("BJ-200","ASUS",
-                4, 6,"V2.44");
-
-        PC thePC = new PC(theCase,theMonitor,theMotherBoard); //we created the PC class by passing
-           //the three objects
-
-        //how we access the methods in monitor class
-        //pc object --> monitor getter --> method name
-        thePC.getMonitor().drawpixelAt(1500,1200,"red");
-        thePC.getMotherBoard().loadProgram("Windows 1.0");
-        thePC.getTheCase().pressPowerButton();
+        System.out.println("Deleting an element from the array");
+        System.out.println("Before Deleting:");
+        sda.traverseArray();
+        sda.deleteValueFromTheArray(7);
+        System.out.println("After Deleting: ");
+        sda.traverseArray();
     }
 }
